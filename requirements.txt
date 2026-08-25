@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+shap
+jinja2
+reportlab
+streamlit
+google-generativeai
+python-dotenv
+openpyxl
