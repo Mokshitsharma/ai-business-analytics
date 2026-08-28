@@ -1,0 +1,9 @@
+* text=auto
+*.py text
+*.md text
+*.html text
+*.css text
+*.json text
+*.csv text
+*.yaml text
+*.yml text
