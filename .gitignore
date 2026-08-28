@@ -7,3 +7,7 @@ data/uploads/
 
 # Regenerable from design/*.dc.html + canvas.json via scripts (design skill seed helper)
 design/ai-business-analytics-ui.html
+
+# Loose screenshots in repo root
+/Screenshot*.png
+/*.png
