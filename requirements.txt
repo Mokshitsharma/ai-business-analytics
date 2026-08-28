@@ -8,3 +8,7 @@ streamlit
 google-generativeai
 python-dotenv
 openpyxl
+fastapi
+uvicorn[standard]
+python-multipart
+PyJWT

@@ -31,14 +31,44 @@ python run.py --file path/to/data.csv --target target_column_name
 
 Generates `data/outputs/report.html` and `data/outputs/report.pdf`.
 
-### Web app
+### Web app (FastAPI + browser UI)
+
+```bash
+uvicorn api.main:app --reload
+```
+
+Then open http://127.0.0.1:8000 — upload a file, pick the target column, watch
+the staged progress, and read / download the report. The same server exposes a
+JSON API:
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| `GET`  | `/health` | pipeline module health |
+| `POST` | `/upload` | multipart `file` + `target_column`; returns `job_id` |
+| `GET`  | `/jobs/{id}/status` | status + progress (0–100) |
+| `GET`  | `/jobs/{id}/result` | full report JSON once complete |
+| `GET`  | `/jobs/{id}/report/html` · `/report/pdf` | rendered report files |
+
+Analysis runs in a background thread; poll `/jobs/{id}/status` until
+`complete`. In development every caller is treated as the `pro` plan; in
+production the plan is read from a `plan` claim on a bearer JWT
+(`api/services/plan_guard.py`).
+
+### Legacy Streamlit app
 
 ```bash
 streamlit run app/main.py
 ```
 
-Upload a CSV/XLSX, pick the target column, and run the analysis from the
-browser.
+### Sample data
+
+```bash
+python scripts/generate_mock_data.py
+```
+
+Writes `data/samples/customer_churn.csv` (classification),
+`monthly_sales.csv` (regression) and `tiny_classification.csv` (small-data edge
+cases).
 
 ## Pipeline
 

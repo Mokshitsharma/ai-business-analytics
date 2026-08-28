@@ -88,7 +88,9 @@ ai_business_analytics/
 │   └── templates/
 │       ├── report.html
 │       └── styles.css
-├── api/                      # UNCOMMITTED, UNWIRED
+├── api/
+│   ├── main.py              # FastAPI app: routers, CORS, error envelope, static mount
+│   ├── static/index.html   # single-page browser UI (vanilla JS)
 │   ├── cache.py              # SimpleCache (TTL, thread-safe)
 │   ├── job_store.py          # JobStore + module-level singleton
 │   ├── routers/
@@ -289,6 +291,13 @@ configuration.
 ---
 
 ## 8. Known technical debt / required fixes
+
+> **Update 2026-08-28:** items 1, 2, 4, 6, 7 are now resolved — `api/main.py`
+> assembles the app, deps are declared, `/upload` derives the plan via
+> `get_plan()`, `LLMSummarizer` is lazy + timeout-guarded, and the deprecated
+> `fillna(method=...)` call is gone. Also added: `utils/serialization.to_json_safe`
+> (NaN/inf-safe API responses), datetime/high-cardinality handling in
+> `FeatureEngineer`, and a non-numeric-prediction branch in `InsightGenerator`.
 
 | # | Item | Location | Priority |
 |---|---|---|---|

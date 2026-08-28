@@ -57,7 +57,7 @@ class DataCleaner:
                 df[col] = df[col].fillna(df[col].mode()[0])
 
             elif col_type == "datetime":
-                df[col] = df[col].fillna(method="ffill")
+                df[col] = df[col].ffill().bfill()
 
             else:  # text
                 df[col] = df[col].fillna("unknown")

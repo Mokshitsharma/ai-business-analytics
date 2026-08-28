@@ -86,6 +86,17 @@ class InsightGenerator:
         self, predictions: np.ndarray
     ) -> Dict[str, Any]:
 
+        predictions = np.asarray(predictions)
+
+        if not np.issubdtype(predictions.dtype, np.number):
+            # Classification with non-numeric labels: report class balance.
+            values, counts = np.unique(predictions, return_counts=True)
+            return {
+                "class_distribution": {
+                    str(v): int(c) for v, c in zip(values, counts)
+                }
+            }
+
         return {
             "mean_prediction": float(np.mean(predictions)),
             "min_prediction": float(np.min(predictions)),

@@ -14,4 +14,7 @@ def load_dataset(path: str) -> pd.DataFrame:
     if extension in ("xlsx", "xls"):
         return pd.read_excel(path)
 
+    if extension == "json":
+        return pd.read_json(path)
+
     raise ValueError(f"Unsupported file format: .{extension}")

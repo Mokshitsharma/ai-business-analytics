@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #faf8f4;
+      color: #26231e;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1f8a7a; text-decoration: none; }
+    a:hover { color: #176b5e; }
+    .serif { font-family: "Newsreader", Georgia, serif; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a9184; }
+    .card { background: #ffffff; border: 1px solid #ebe6dd; border-radius: 12px; }
+  </style>
+</helmet>
+
+<div>
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; border-bottom: 1px solid #ebe6dd; background: #ffffff;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 28px; height: 28px; border-radius: 7px; background: #1f8a7a; display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-5"/><path d="M13 16V8"/><path d="M18 16v-9"/></svg>
+      </div>
+      <span style="font-weight: 600; font-size: 15px; letter-spacing: -0.01em;">AI Business Analytics</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button style="border: 1px solid #ebe6dd; background: #faf8f4; color: #26231e; font-family: inherit; font-size: 13px; padding: 8px 14px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b6459" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        HTML
+      </button>
+      <button style="border: none; background: #1f8a7a; color: #ffffff; font-family: inherit; font-size: 13px; padding: 8px 14px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        PDF
+      </button>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 48px 48px 72px;">
+
+    <!-- title block -->
+    <div style="margin-bottom: 40px;">
+      <div class="eyebrow" style="margin-bottom: 12px;">Analysis report</div>
+      <h1 class="serif" style="margin: 0 0 12px; font-size: 44px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1;">Customer churn drivers</h1>
+      <div class="mono" style="font-size: 12.5px; color: #6b6459; display: flex; flex-wrap: wrap; gap: 6px 18px;">
+        <span>customer_churn.csv</span>
+        <span>&middot;</span>
+        <span>1,186 rows &times; 9 columns</span>
+        <span>&middot;</span>
+        <span>target: churned</span>
+        <span>&middot;</span>
+        <span>classification</span>
+        <span>&middot;</span>
+        <span>generated 28 Aug 2026, 14:12</span>
+      </div>
+    </div>
+
+    <!-- executive summary -->
+    <section style="margin-bottom: 44px;">
+      <div class="card" style="padding: 34px 38px; border-left: 3px solid #1f8a7a;">
+        <div class="eyebrow" style="margin-bottom: 16px;">Executive summary</div>
+        <p class="serif" style="margin: 0 0 20px; font-size: 20px; line-height: 1.6; font-weight: 400; color: #26231e;">
+          Roughly one customer in three is churning, and the pattern is consistent: short-tenure
+          accounts on month-to-month contracts with recent support friction are leaving at more
+          than twice the rate of the rest of the base. The model predicts churn with 87% accuracy,
+          and contract type, tenure and support-ticket volume account for most of that signal.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+          <div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 10px;">Key insights</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.7; color: #4a453d;">
+              <li>Month-to-month contracts carry ~2.4&times; the churn rate of annual contracts.</li>
+              <li>Churn drops sharply after 18 months of tenure.</li>
+              <li>3+ support tickets in 30 days is a strong leading indicator.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 10px;">Recommendations</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.7; color: #4a453d;">
+              <li>Offer annual-contract incentives during onboarding.</li>
+              <li>Trigger a retention outreach after the 3rd support ticket.</li>
+              <li>Prioritise accounts under 6 months for success check-ins.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- model performance -->
+    <section style="margin-bottom: 44px;">
+      <h2 class="serif" style="margin: 0 0 18px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Model performance</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;">
+        <div class="card" style="padding: 18px;">
+          <div class="mono" style="font-size: 11.5px; color: #9a9184; text-transform: uppercase; letter-spacing: 0.05em;">Accuracy</div>
+          <div class="mono" style="font-size: 28px; font-weight: 500; margin-top: 6px;">0.87</div>
+        </div>
+        <div class="card" style="padding: 18px;">
+          <div class="mono" style="font-size: 11.5px; color: #9a9184; text-transform: uppercase; letter-spacing: 0.05em;">F1 (weighted)</div>
+          <div class="mono" style="font-size: 28px; font-weight: 500; margin-top: 6px;">0.86</div>
+        </div>
+        <div class="card" style="padding: 18px;">
+          <div class="mono" style="font-size: 11.5px; color: #9a9184; text-transform: uppercase; letter-spacing: 0.05em;">CV score</div>
+          <div class="mono" style="font-size: 28px; font-weight: 500; margin-top: 6px;">0.84</div>
+        </div>
+        <div class="card" style="padding: 18px;">
+          <div class="mono" style="font-size: 11.5px; color: #9a9184; text-transform: uppercase; letter-spacing: 0.05em;">Model</div>
+          <div style="font-size: 15px; font-weight: 500; margin-top: 10px;">Random Forest</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feature importance -->
+    <section style="margin-bottom: 44px;">
+      <h2 class="serif" style="margin: 0 0 6px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">What drives the prediction</h2>
+      <p style="margin: 0 0 20px; font-size: 13.5px; color: #6b6459;">Global SHAP importance &mdash; mean absolute contribution of each feature.</p>
+      <div class="card" style="padding: 26px 30px; display: flex; flex-direction: column; gap: 16px;">
+        <!-- bar row -->
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">contract_type</span>
+          <span style="height: 12px; border-radius: 3px; background: #1f8a7a; width: 100%;"></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.31</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">tenure_months</span>
+          <span style="display: block;"><span style="display: block; height: 12px; border-radius: 3px; background: #1f8a7a; width: 74%;"></span></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.23</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">support_tickets</span>
+          <span style="display: block;"><span style="display: block; height: 12px; border-radius: 3px; background: #1f8a7a; width: 61%;"></span></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.19</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">logins_last_30d</span>
+          <span style="display: block;"><span style="display: block; height: 12px; border-radius: 3px; background: #4aa89a; width: 42%;"></span></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.13</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">monthly_spend</span>
+          <span style="display: block;"><span style="display: block; height: 12px; border-radius: 3px; background: #4aa89a; width: 29%;"></span></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.09</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 16px;">
+          <span class="mono" style="font-size: 12.5px; color: #4a453d;">plan=Enterprise</span>
+          <span style="display: block;"><span style="display: block; height: 12px; border-radius: 3px; background: #b9d9d2; width: 16%;"></span></span>
+          <span class="mono" style="font-size: 12px; color: #6b6459; text-align: right;">0.05</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- business insights -->
+    <section style="margin-bottom: 44px;">
+      <h2 class="serif" style="margin: 0 0 18px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Business insights</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;">
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+            <span style="font-size: 13px; font-weight: 600;">Trends</span>
+          </div>
+          <ul style="margin: 0; padding-left: 16px; font-size: 12.5px; line-height: 1.65; color: #4a453d;">
+            <li>monthly_spend shows an increasing trend</li>
+            <li>logins_last_30d shows a decreasing trend</li>
+          </ul>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c98a2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span style="font-size: 13px; font-weight: 600;">Anomalies</span>
+          </div>
+          <ul style="margin: 0; padding-left: 16px; font-size: 12.5px; line-height: 1.65; color: #4a453d;">
+            <li>monthly_spend has 34 potential anomalies</li>
+            <li>support_tickets has 12 potential anomalies</li>
+          </ul>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/><path d="M12 12 3 12"/></svg>
+            <span style="font-size: 13px; font-weight: 600;">Segments</span>
+          </div>
+          <ul style="margin: 0; padding-left: 16px; font-size: 12.5px; line-height: 1.65; color: #4a453d;">
+            <li>Enterprise has highest monthly_spend, Basic has lowest</li>
+            <li>West has highest tenure_months, East has lowest</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- data quality -->
+    <section style="margin-bottom: 44px;">
+      <h2 class="serif" style="margin: 0 0 18px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Data quality &amp; EDA</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="card" style="padding: 24px 26px;">
+          <div class="eyebrow" style="margin-bottom: 14px;">Quality</div>
+          <div class="mono" style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; color: #6b6459;">
+            <div style="display: flex; justify-content: space-between;"><span>Rows after cleaning</span><span style="color: #26231e;">1,186</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>Duplicate rows removed</span><span style="color: #26231e;">14</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>Columns with missing values</span><span style="color: #26231e;">2</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>Values imputed</span><span style="color: #26231e;">84</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding: 24px 26px;">
+          <div class="eyebrow" style="margin-bottom: 14px;">Strong correlations</div>
+          <div class="mono" style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; color: #6b6459;">
+            <div style="display: flex; justify-content: space-between;"><span>tenure_months &times; churned</span><span style="color: #26231e;">-0.74</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>support_tickets &times; churned</span><span style="color: #26231e;">0.71</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>logins_last_30d &times; monthly_spend</span><span style="color: #26231e;">0.78</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- example explanations -->
+    <section>
+      <h2 class="serif" style="margin: 0 0 6px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Example predictions</h2>
+      <p style="margin: 0 0 20px; font-size: 13.5px; color: #6b6459;">Local SHAP contributions for individual rows &mdash; how each feature pushed this prediction.</p>
+      <div class="card" style="padding: 8px 26px;">
+        <div style="display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid #f1ede4;">
+          <span class="mono" style="font-size: 12px; color: #9a9184; width: 60px;">row 41</span>
+          <span style="font-size: 12.5px; color: #4a453d; flex-grow: 1;">Predicted <strong style="color: #26231e;">churn</strong> &mdash; driven up by <span class="mono">contract_type=Monthly (+0.28)</span>, <span class="mono">support_tickets=5 (+0.19)</span></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid #f1ede4;">
+          <span class="mono" style="font-size: 12px; color: #9a9184; width: 60px;">row 88</span>
+          <span style="font-size: 12.5px; color: #4a453d; flex-grow: 1;">Predicted <strong style="color: #26231e;">retain</strong> &mdash; driven down by <span class="mono">tenure_months=47 (-0.22)</span>, <span class="mono">contract_type=Annual (-0.17)</span></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding: 16px 0;">
+          <span class="mono" style="font-size: 12px; color: #9a9184; width: 60px;">row 132</span>
+          <span style="font-size: 12.5px; color: #4a453d; flex-grow: 1;">Predicted <strong style="color: #26231e;">churn</strong> &mdash; driven up by <span class="mono">logins_last_30d=2 (+0.21)</span>, <span class="mono">tenure_months=4 (+0.16)</span></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+</body>
+</html>

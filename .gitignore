@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .env
 data/outputs/
+data/uploads/
+
+# Regenerable from design/*.dc.html + canvas.json via scripts (design skill seed helper)
+design/ai-business-analytics-ui.html

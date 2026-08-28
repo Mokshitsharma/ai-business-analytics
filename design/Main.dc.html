@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #faf8f4;
+      color: #26231e;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1f8a7a; text-decoration: none; }
+    a:hover { color: #176b5e; }
+    .serif { font-family: "Newsreader", Georgia, serif; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    table { border-collapse: collapse; width: 100%; }
+  </style>
+</helmet>
+
+<div style="min-height: 900px; display: flex; flex-direction: column;">
+
+  <!-- top bar -->
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; border-bottom: 1px solid #ebe6dd; background: #ffffff;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 28px; height: 28px; border-radius: 7px; background: #1f8a7a; display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-5"/><path d="M13 16V8"/><path d="M18 16v-9"/></svg>
+      </div>
+      <span style="font-weight: 600; font-size: 15px; letter-spacing: -0.01em;">AI Business Analytics</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <nav style="display: flex; gap: 22px; font-size: 14px; color: #6b6459;">
+        <span style="color: #26231e; font-weight: 500;">New analysis</span>
+        <span>History</span>
+        <span>Docs</span>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 5px 11px; border: 1px solid #ebe6dd; border-radius: 999px; font-size: 12.5px; color: #6b6459;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #1f8a7a;"></span>
+        Pro plan
+      </div>
+    </div>
+  </header>
+
+  <!-- body -->
+  <main style="flex-grow: 1; padding: 48px; max-width: 1200px; width: 100%; margin: 0 auto;">
+
+    <div style="margin-bottom: 32px;">
+      <h1 class="serif" style="margin: 0 0 8px; font-size: 40px; font-weight: 500; letter-spacing: -0.015em;">New analysis</h1>
+      <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #6b6459; max-width: 620px;">
+        Upload a business dataset and get an automated ML analysis &mdash; data cleaning,
+        exploratory analysis, model training, SHAP explainability, and an AI-written
+        executive summary, packaged into an HTML and PDF report.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start;">
+
+      <!-- form column -->
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+
+        <!-- step 1: file -->
+        <section>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;">
+            <span class="mono" style="font-size: 12px; color: #1f8a7a;">01</span>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600;">Dataset</h2>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #ebe6dd; border-radius: 10px; padding: 16px 18px; display: flex; align-items: center; gap: 14px;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: #f1ede4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+            </div>
+            <div style="flex-grow: 1; min-width: 0;">
+              <div style="font-size: 14px; font-weight: 500;">customer_churn.csv</div>
+              <div class="mono" style="font-size: 12px; color: #6b6459; margin-top: 2px;">312 KB &middot; 1,200 rows &middot; 9 columns</div>
+            </div>
+            <button style="border: 1px solid #ebe6dd; background: #faf8f4; color: #6b6459; font-size: 13px; font-family: inherit; padding: 7px 12px; border-radius: 6px; cursor: pointer;">Replace</button>
+          </div>
+
+          <div style="margin-top: 10px; border: 1px dashed #d8d2c6; border-radius: 10px; padding: 22px; text-align: center; color: #6b6459;">
+            <div style="font-size: 13.5px;">Drop a different file here, or <span style="color: #1f8a7a; font-weight: 500;">browse</span></div>
+            <div class="mono" style="font-size: 11.5px; margin-top: 6px; color: #9a9184;">up to 500 MB &middot; .csv .xlsx .xls .json</div>
+          </div>
+        </section>
+
+        <!-- data preview -->
+        <section>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;">
+            <span class="mono" style="font-size: 12px; color: #1f8a7a;">02</span>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600;">Preview</h2>
+            <span style="font-size: 12.5px; color: #9a9184;">first 5 rows</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #ebe6dd; border-radius: 10px; overflow: hidden;">
+            <div style="overflow-x: auto;">
+              <table style="font-size: 12.5px;" class="mono">
+                <thead>
+                  <tr style="background: #faf8f4; color: #6b6459; text-align: left;">
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd;">plan</th>
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd;">region</th>
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd;">tenure_months</th>
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd;">monthly_spend</th>
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd;">support_tickets</th>
+                    <th style="padding: 9px 12px; font-weight: 500; border-bottom: 1px solid #ebe6dd; color: #1f8a7a;">churned</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">Basic</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">North</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">7</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">54.20</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">3</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4; color: #1f8a7a;">1</td></tr>
+                  <tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">Pro</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">South</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">41</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">88.75</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">0</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">0</td></tr>
+                  <tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">Basic</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">&mdash;</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">12</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">61.00</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">1</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">0</td></tr>
+                  <tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">Enterprise</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">West</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">55</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">203.40</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">2</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1ede4;">0</td></tr>
+                  <tr><td style="padding: 8px 12px;">Pro</td><td style="padding: 8px 12px;">East</td><td style="padding: 8px 12px;">3</td><td style="padding: 8px 12px;">72.10</td><td style="padding: 8px 12px;">5</td><td style="padding: 8px 12px; color: #1f8a7a;">1</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- target -->
+        <section>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;">
+            <span class="mono" style="font-size: 12px; color: #1f8a7a;">03</span>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600;">Target column</h2>
+          </div>
+          <p style="margin: 0 0 12px; font-size: 13.5px; color: #6b6459;">Which column do you want the model to predict?</p>
+          <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+            <div style="position: relative; min-width: 260px;">
+              <div style="background: #ffffff; border: 1px solid #cfc8ba; border-radius: 7px; padding: 11px 14px; font-size: 14px; display: flex; align-items: center; justify-content: space-between;">
+                <span class="mono" style="color: #26231e;">churned</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9a9184" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; background: #eef5f3; border: 1px solid #cfe6e0; border-radius: 999px; font-size: 12.5px; color: #176b5e;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Classification detected &middot; 2 classes
+            </div>
+          </div>
+        </section>
+
+        <!-- actions -->
+        <div style="display: flex; align-items: center; gap: 12px; padding-top: 8px;">
+          <button style="background: #1f8a7a; color: #ffffff; border: none; font-family: inherit; font-size: 14.5px; font-weight: 500; padding: 12px 22px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px;">
+            Run analysis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button style="background: transparent; color: #6b6459; border: 1px solid #ebe6dd; font-family: inherit; font-size: 14.5px; padding: 12px 20px; border-radius: 7px; cursor: pointer;">Cancel</button>
+          <span class="mono" style="font-size: 12px; color: #9a9184; margin-left: 4px;">~45s</span>
+        </div>
+      </div>
+
+      <!-- right rail -->
+      <aside style="display: flex; flex-direction: column; gap: 16px; position: sticky; top: 48px;">
+        <div style="background: #ffffff; border: 1px solid #ebe6dd; border-radius: 10px; padding: 18px;">
+          <h3 style="margin: 0 0 14px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #9a9184;">What you'll get</h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.45;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+              Cleaned data &amp; quality report
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.45;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+              Trained model with accuracy metrics
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.45;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+              SHAP feature explanations
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.45;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+              AI executive summary + HTML / PDF
+            </li>
+          </ul>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #ebe6dd; border-radius: 10px; padding: 18px;">
+          <h3 style="margin: 0 0 12px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #9a9184;">Pro plan limits</h3>
+          <div class="mono" style="display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #6b6459;">
+            <div style="display: flex; justify-content: space-between;"><span>Max file size</span><span style="color: #26231e;">500 MB</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>Max rows</span><span style="color: #26231e;">500,000</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>Analyses / month</span><span style="color: #26231e;">Unlimited</span></div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+</body>
+</html>
