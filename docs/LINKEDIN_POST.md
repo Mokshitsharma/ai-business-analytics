@@ -64,7 +64,7 @@ GitHub link in the comments.
 
 ## First comment (post this yourself right after publishing)
 
-GitHub: [ADD YOUR REPO URL]
+GitHub: https://github.com/Mokshitsharma/ai-business-analytics
 
 Still early and rough in places — feedback, ideas and PRs all welcome.
 Especially curious which model types and which kinds of insight people would
