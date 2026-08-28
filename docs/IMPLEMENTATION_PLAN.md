@@ -2,7 +2,8 @@
 
 **Status:** Draft · **Last updated:** 2026-08-28
 **Companion docs:** [PRD](./PRD.md) · [TRD](./TRD.md) · [Architecture](./ARCHITECTURE.md) ·
-[App Flow](./APPFLOW.md) · [Backend Schema](./BACKEND_SCHEMA.md)
+[App Flow](./APPFLOW.md) · [Backend Schema](./BACKEND_SCHEMA.md) ·
+[Roadmap](./ROADMAP.md) (product / hosting / launch / UI view)
 
 ---
 
