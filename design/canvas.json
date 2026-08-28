@@ -1,13 +1,13 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 900, "title": "Upload" },
-    { "file": "Analyzing.dc.html", "x": 1560, "y": 0, "w": 1440, "h": 900, "title": "Analyzing" },
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 1060, "title": "Upload" },
+    { "file": "Analyzing.dc.html", "x": 1560, "y": 0, "w": 1440, "h": 940, "title": "Analyzing" },
     { "file": "Report.dc.html", "x": 3120, "y": 0, "w": 1440, "h": 2560, "title": "Report", "print": "flow" },
-    { "file": "DirectionB.dc.html", "x": 0, "y": 1020, "w": 1440, "h": 900, "title": "Alternate direction" }
+    { "file": "DirectionB.dc.html", "x": 0, "y": 1200, "w": 1440, "h": 940, "title": "Alternate direction" }
   ],
   "annotations": [
     { "id": "primary", "x": 0, "y": -104, "w": 520, "text": "Primary direction: warm editorial. Calm paper background, one teal accent, serif display headings, monospaced numerals. Three screens: upload -> analyzing -> report." },
-    { "id": "alt", "x": 0, "y": 936, "w": 520, "text": "Alternate direction (low-fi): dense, dark, single-screen dashboard - upload, config and results all on one view, no wizard." }
+    { "id": "alt", "x": 0, "y": 1110, "w": 520, "text": "Alternate direction (low-fi): dense, dark, single-screen dashboard - upload, config and results all on one view, no wizard." }
   ],
   "launch": { "view": "canvas" }
 }
